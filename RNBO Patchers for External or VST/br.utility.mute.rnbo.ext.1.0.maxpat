@@ -1172,7 +1172,9 @@
 							"max-export" : 							{
 								"max-external-export" : 								{
 									"mc" : 1,
-									"external_name" : "br.utility.mute.1.0"
+									"external_name" : "br.utility.mute.1.0~",
+									"author" : "Brian Riordan",
+									"description" : "This is a basic patch/external/plugin/device built in Max/MSP that allows the user to simply mute a signal"
 								}
 
 							}
