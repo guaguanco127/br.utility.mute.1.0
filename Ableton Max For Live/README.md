@@ -45,7 +45,7 @@ Copy and paste either br.utility.mute.1.0.amxd or br.utility.mute.basic.1.0.amxd
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
   
-4. Open Ableton Live. On the left-hand side, loove for Max for Live > Max Audio Effect and then the name of this device.
+4. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
 5. Either double click on the device, or drag/drop it onto the track where you wish to use it.  
     
