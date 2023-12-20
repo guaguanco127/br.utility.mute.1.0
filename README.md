@@ -5,7 +5,7 @@
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
-Additional programs can be found here: [https://github.com/guaguanco127](https://github.com/guaguanco127)
+Additional programs can be found here: [https://github.com/guaguanco127/plugins](https://github.com/guaguanco127/plugins)
 
 These files were created with Max/MSP version 8.5.6, or RNBO 1.2.3. Links on how to use and/or install below. 
 
