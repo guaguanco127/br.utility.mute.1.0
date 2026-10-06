@@ -32,13 +32,15 @@
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
-		"description" : "",
+		"description" : "br.utility.mute.rnbo.ext.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
 		"digest" : "",
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"boxes" : [ 			{
+		"boxes" : [
+{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [314.0, 40.0, 520.0, 40.0], "text": "br.utility.mute.rnbo.ext.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/", "linecount": 2}},
+ 			{
 				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "live.text",
