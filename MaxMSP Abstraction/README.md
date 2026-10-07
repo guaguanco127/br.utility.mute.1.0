@@ -1,68 +1,74 @@
-# Max/MSP Abstraction: br.utility.mute.abs.1.0  
+# Max/MSP Abstraction: br.utility.mute.2.0  
    
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.utility.mute.1.0, with all related files, can be found here: [https://github.com/guaguanco127/br.utility.mute.1.0](https://github.com/guaguanco127/br.utility.mute.1.0)  
+Repository for br.utility.mute.2.0, with all related files, can be found here: [https://github.com/guaguanco127/br.utility.mute](https://github.com/guaguanco127/br.utility.mute)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-These files were created with Max/MSP version 8.5.6.
+These files were created with Max 9.
 
 ## Table of Contents 
 
 [About](#About)   
+[Which file?](#Files)  
 [What is an abstraction?](#Abstraction)  
 [How To Install](#Install)  
 [How To Use](#Use) 
- 
- 
 
 ## <a name="About"></a>About
 
-These files were created with Max/MSP version 8.5.6, or RNBO 1.2.3. Links on how to use and/or install below. 
+A click-free mute. Switching a gain straight from 1 to 0 cuts the wave mid-swing, and that jump is heard as a click. br.utility.mute moves the gain along a 10 ms S-curve instead: too fast to hear as a fade, smooth enough that nothing clicks, and it lands on true silence. Works at any sample rate.
 
-This is a basic abstraction for Max/MSP that allows the user to simply mute the signal without creating any clicks or pops. Currently works in any sample rate or bit depth.  
+## <a name="Files"></a>Which file?
 
-There are two different versions:
+| File | What it is |
+|---|---|
+| br.utility.mute.2.0 | Mono, no UI. The plain object to patch with |
+| br.utility.mute.stereo.2.0 | Stereo, no UI. One gain for both channels, so L and R stay together |
+| br.utility.mute.ui.2.0 | Mono, with a Mute button, ready for a [bpatcher] |
+| br.utility.mute.stereo.ui.2.0 | Stereo, with a Mute button, ready for a [bpatcher] |
+| _br.utility.mute.example.2.0 | Example patch: open this first |
 
-The first one, br.utility.mute.abs.1.0.maxpat, is an abstraction build using gen~.  
-
-The second one, br.utility.mute.basic.abs.1.0.maxpat, uses only MSP objects without the use of gen~. This version is more basic and heavily commented. It appears in presentation mode with a [live.dial] object inside so you could use it inside of a [bpatcher]
-
-The purpose for having these two different versions is so that novices to Max/MSP can learn how basic devices can be created by observing the basic version. Additionally, those familiar to Max/MSP that are novices to gen~ can learn by comparing the two versions. Additionally, the basic version is ready for a [bpatcher] while the other version can be used with signals to control the decibels.
-
-
+The UI versions contain the plain version and have the same inlets and outlets, so either swaps in without rewiring. Open a UI version in patching mode for comments on how it is built.
 
 ## <a name="Abstraction"></a>What is an Abstraction?
 
 An abstraction is a subpatcher that is saved as an external file, and can be used just like a standard Max object. As long as your abstraction can be found in the Max file path, you can type its name into a new object box and it will be loaded directly into your patch.  
 
-By saving your logic in an abstraction, you can create modules that can be used in future work with little or no additional programming. This allows you to parlay your Max knowledge into more efficient work in the future, and will help you create programming systems that are modular and easier to maintain.
+By saving your logic in an abstraction, you can create modules that can be used in future work with little or no additional programming.
 
 ## <a name="Install"></a>How To Install
 
-1. Make sure you have Max/MSP 8 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
+1. Make sure you have Max 9 installed, and that the Max patch you are using is saved inside a folder.  
 
-2. For the normal version of this abstraction, copy and paste br.utility.mute.abs.1.0.maxpat inside of the same folder as the Max patch you are using.     
-  
-3. For the basic version of this abstraction, copy and paste br.utility.mute.basic.abs.1.0.maxpat inside of the same folder as the Max patch you are using. 
+2. Copy the .maxpat files you want into the same folder as your patch. The UI versions need their plain version next to them (br.utility.mute.stereo.ui.2.0 uses br.utility.mute.stereo.2.0).
 
-4. In the Max patch you are using, create an object called br.utility.mute.abs.1.0 (or br.utility.mute.basic.abs.1.0 for the basic version.
+3. In your patch, create an object called br.utility.mute.stereo.2.0 (or any other name from the table above, without .maxpat). For a version with a button, create a [bpatcher] and choose br.utility.mute.stereo.ui.2.0.maxpat as its patcher.
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. The third inlet takes an integer in, 0 = bypass, 1 = mute. 
+Mono (br.utility.mute.2.0 and .ui.2.0):
 
-Double click on the object and you can see inside of the object. This way you can study how it was built. 
-    
+| Inlet | Control | Type | Range | Default |
+|---|---|---|---|---|
+| 1 | Audio In | Signal | | |
+| 2 | Mute | Signal or Int (UI: Int only) | 0 - 1, 1 = silent | 0 |
 
+Outlet 1: Audio Out (Signal)
 
+Stereo (br.utility.mute.stereo.2.0 and .stereo.ui.2.0):
 
- 
+| Inlet | Control | Type | Range | Default |
+|---|---|---|---|---|
+| 1 | Left In | Signal | | |
+| 2 | Right In | Signal | | |
+| 3 | Mute | Signal or Int (UI: Int only) | 0 - 1, 1 = silent | 0 |
 
+Outlets 1 / 2: Left Out / Right Out (Signal)
 
+Values between 0 and 1 give partial gain, and a mute signal that moves faster than the fade is smoothed to the same 10 ms. In the UI versions a number into the Mute inlet moves the button, so the screen always shows what you hear. Hover any inlet or outlet in Max for its description.
 
-
-
+Double-click the object to see inside it and study how it was built.
