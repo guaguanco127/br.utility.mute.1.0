@@ -54,7 +54,7 @@ You can use it as an abstraction within Max/MSP or as a Max for Live device with
 | br.utility.mute.stereo.2.2 | Stereo, no UI. One gain for both channels, so L and R stay together |
 | br.utility.mute.ui.2.2 | Mono, with a Mute button, ready for a [bpatcher] |
 | br.utility.mute.stereo.ui.2.2 | Stereo, with a Mute button, ready for a [bpatcher] |
-| _br.utility.mute.example.2.2 | Example patch: open this first |
+| _br.utility.mute.example.2.2 | Example patch: open this first (its stereo core tab shows br.utility.mute.stereo.2.2, the plain stereo version) |
 
 The UI versions contain the plain version and have the same inlets and audio outlets (plus State last), so either swaps in without rewiring. Open a UI version in patching mode for comments on how it is built.
 
