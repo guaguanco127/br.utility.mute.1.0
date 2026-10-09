@@ -1,11 +1,11 @@
-# Max/MSP RNBO Patch for External or VST Creation: br.utility.mute.stereo.rnbo.2.1  
+# Max/MSP RNBO Patch for External or VST Creation: br.utility.mute.stereo.rnbo.2.2  
    
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.utility.mute.2.1, with all related files, can be found here: [https://github.com/guaguanco127/br.utility.mute](https://github.com/guaguanco127/br.utility.mute)  
+Repository for br.utility.mute.2.2, with all related files, can be found here: [https://github.com/guaguanco127/br.utility.mute](https://github.com/guaguanco127/br.utility.mute)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9 and RNBO.
@@ -22,9 +22,9 @@ These files were created with Max 9 and RNBO.
 
 A click-free mute. Switching a gain straight from 1 to 0 cuts the wave mid-swing, and that jump is heard as a click. br.utility.mute moves the gain along a 10 ms S-curve instead: too fast to hear as a fade, smooth enough that nothing clicks, and it lands on true silence. Works at any sample rate.
 
-One patch now does both jobs (1.0 had two). Inside [rnbo~], the Mute param is the plugin parameter, and inlet 3 sets the same param, so the external has the same three inlets as the abstraction: L, R, Mute. The gen~ code inside is the same as br.utility.mute.stereo.2.1.
+One patch now does both jobs (1.0 had two). Inside [rnbo~], the Mute param is the plugin parameter, and inlet 3 sets the same param, so the external has the same three inlets as the abstraction: L, R, Mute. The gen~ code inside is the same as br.utility.mute.stereo.2.2.
 
-The Mute value also comes out of [rnbo~]'s rightmost outlet as `mute 0` / `mute 1` the moment it changes (an [outport mute] inside), matching the State outlet of the abstractions.
+There is no State output (as of 2.2): whatever drives the external or plugin already knows the Mute value, and in a DAW Mute is a normal plugin parameter.
 
 ## <a name="External"></a>What is an External for Max/MSP?
 
@@ -38,7 +38,7 @@ A VST is a third party audio plugin generally run within a digital audio worksta
 
 1. Make sure Max 9 is installed on your computer, and that you have an RNBO license.
 
-2. Open br.utility.mute.stereo.rnbo.2.1.maxpat.
+2. Open br.utility.mute.stereo.rnbo.2.2.maxpat.
 
 3. Double-click the [rnbo~] object while the patch is locked.
 
@@ -46,11 +46,11 @@ A VST is a third party audio plugin generally run within a digital audio worksta
 
 5. Select "Max External Export".
 
-6. Name the object br.utility.mute.stereo.2.1~ and export.
+6. Name the object br.utility.mute.stereo.2.2~ and export.
 
-**Keep the ~ at the end of the name.** Without it, the external has exactly the same name as the abstraction br.utility.mute.stereo.2.1, and Max loads whichever one it finds first, so you can't be sure which one you're using. The ~ also follows the Max convention for objects that process audio. Any other name is fine as long as it isn't the name of an abstraction you also use.
+**Keep the ~ at the end of the name.** Without it, the external has exactly the same name as the abstraction br.utility.mute.stereo.2.2, and Max loads whichever one it finds first, so you can't be sure which one you're using. The ~ also follows the Max convention for objects that process audio. Any other name is fine as long as it isn't the name of an abstraction you also use.
 
-7. Copy the exported .mxo (Mac) or .mxe64 (Windows) into a folder on Max's search path, for example Documents/Max 9/Externals, and add that folder in Options > File Preferences if it isn't listed. Then create an object called br.utility.mute.stereo.2.1~ in any patch. It has the same inlets as the abstraction (L, R, Mute), except that Mute takes numbers only.
+7. Copy the exported .mxo (Mac) or .mxe64 (Windows) into a folder on Max's search path, for example Documents/Max 9/Externals, and add that folder in Options > File Preferences if it isn't listed. Then create an object called br.utility.mute.stereo.2.2~ in any patch. It has the same inlets as the abstraction (L, R, Mute), except that Mute takes numbers only.
 
 ## <a name="ExportVST"></a>How To Export as a VST or AU Audio Plugin
 
@@ -58,7 +58,7 @@ A VST is a third party audio plugin generally run within a digital audio worksta
 
 1. Make sure Max 9 is installed on your computer, and that you have an RNBO license.
 
-2. Open br.utility.mute.stereo.rnbo.2.1.maxpat.
+2. Open br.utility.mute.stereo.rnbo.2.2.maxpat.
 
 3. Double-click the [rnbo~] object while the patch is locked.
 

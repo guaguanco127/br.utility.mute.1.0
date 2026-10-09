@@ -39,7 +39,7 @@
         "enablehscroll": 1,
         "enablevscroll": 1,
         "devicewidth": 52.0,
-        "description": "br.utility.mute.stereo.ui.2.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "description": "br.utility.mute.ui.2.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
         "digest": "",
         "tags": "",
         "style": "",
@@ -54,12 +54,12 @@
                     "numoutlets": 0,
                     "outlettype": [],
                     "patching_rect": [
-                        520.0,
+                        560.0,
                         15.0,
                         360.0,
                         33.0
                     ],
-                    "text": "br.utility.mute.stereo.ui.2.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
+                    "text": "br.utility.mute.ui.2.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -79,7 +79,7 @@
                         30.0,
                         30.0
                     ],
-                    "comment": "Left In (Signal)",
+                    "comment": "Audio In (Signal)",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -88,26 +88,6 @@
                 "box": {
                     "maxclass": "inlet",
                     "id": "obj-in2",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [
-                        ""
-                    ],
-                    "patching_rect": [
-                        90.0,
-                        15.0,
-                        30.0,
-                        30.0
-                    ],
-                    "comment": "Right In (Signal)",
-                    "fontname": "Arial",
-                    "fontsize": 12.0
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "inlet",
-                    "id": "obj-in3",
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [
@@ -176,17 +156,16 @@
                 "box": {
                     "maxclass": "newobj",
                     "id": "obj-core",
-                    "text": "br.utility.mute.stereo.2.1",
-                    "numinlets": 3,
-                    "numoutlets": 3,
+                    "text": "br.utility.mute.2.2",
+                    "numinlets": 2,
+                    "numoutlets": 1,
                     "outlettype": [
-                        "signal",
                         "signal",
                         ""
                     ],
                     "patching_rect": [
                         15.0,
-                        105.0,
+                        125.0,
                         170.0,
                         22.0
                     ],
@@ -203,29 +182,11 @@
                     "outlettype": [],
                     "patching_rect": [
                         15.0,
-                        160.0,
+                        190.0,
                         30.0,
                         30.0
                     ],
-                    "comment": "Left Out (Signal)",
-                    "fontname": "Arial",
-                    "fontsize": 12.0
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "outlet",
-                    "id": "obj-out2",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "outlettype": [],
-                    "patching_rect": [
-                        165.0,
-                        160.0,
-                        30.0,
-                        30.0
-                    ],
-                    "comment": "Right Out (Signal)",
+                    "comment": "Audio Out (Signal)",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -238,7 +199,7 @@
                     "numoutlets": 0,
                     "outlettype": [],
                     "patching_rect": [
-                        260.0,
+                        300.0,
                         55.0,
                         240.0,
                         75.0
@@ -256,12 +217,12 @@
                     "numoutlets": 0,
                     "outlettype": [],
                     "patching_rect": [
-                        260.0,
+                        300.0,
                         140.0,
                         240.0,
                         75.0
                     ],
-                    "text": "[br.utility.mute.stereo.2.1] is the real object: open it to see the gen~ inside. This file only adds the button, so you can also patch the core directly and drive its mute inlet with a signal.",
+                    "text": "[br.utility.mute.2.2] is the real object: open it to see the gen~ inside. This file only adds the button, so you can also patch the core directly and drive its mute inlet with a signal.",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -275,7 +236,7 @@
                     "outlettype": [],
                     "patching_rect": [
                         15.0,
-                        205.0,
+                        235.0,
                         480.0,
                         47.0
                     ],
@@ -293,7 +254,7 @@
                     "outlettype": [],
                     "patching_rect": [
                         15.0,
-                        260.0,
+                        290.0,
                         480.0,
                         33.0
                     ],
@@ -310,7 +271,7 @@
                     "numoutlets": 0,
                     "outlettype": [],
                     "patching_rect": [
-                        520.0,
+                        560.0,
                         60.0,
                         52.0,
                         24.0
@@ -326,8 +287,8 @@
                     "background": 1,
                     "mode": 0,
                     "rounded": 7,
-                    "hint": "br.utility.mute.stereo.ui.2.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
-                    "annotation": "br.utility.mute.stereo.ui.2.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+                    "hint": "br.utility.mute.ui.2.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+                    "annotation": "br.utility.mute.ui.2.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -340,12 +301,12 @@
                     "numoutlets": 0,
                     "outlettype": [],
                     "patching_rect": [
-                        215.0,
-                        160.0,
+                        200.0,
+                        190.0,
                         30.0,
                         30.0
                     ],
-                    "comment": "State (Message): mute 0 / mute 1, sent the moment the mute changes. Numbers only (a signal mute is not reported). Pick it out by name: [route mute]"
+                    "comment": "State (Message): mute 0 / mute 1, sent the moment the button changes. Pick it out by name: [route mute]"
                 }
             },
             {
@@ -357,11 +318,74 @@
                     "outlettype": [],
                     "patching_rect": [
                         15.0,
-                        300.0,
+                        330.0,
                         480.0,
                         47.0
                     ],
-                    "text": "The last outlet (State) reports the button as mute 1 / mute 0 the moment it changes. It comes from the core, so clicks, numbers into the inlet and preset recalls all show up. Pick it out by name with [route mute].",
+                    "text": "The last outlet (State) reports the button as mute 1 / mute 0 the moment it changes. It taps the button, so clicks, numbers into the inlet and preset recalls all show up. Only the UI has one: whatever drives the core directly already knows the value. Pick it out by name with [route mute].",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-3",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        165.0,
+                        90.0,
+                        51.0,
+                        22.0
+                    ],
+                    "text": "t i i",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-4",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        200.0,
+                        125.0,
+                        72.0,
+                        22.0
+                    ],
+                    "text": "change 0",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-5",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        200.0,
+                        155.0,
+                        90.0,
+                        22.0
+                    ],
+                    "text": "prepend mute",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -387,32 +411,8 @@
                         0
                     ],
                     "destination": [
-                        "obj-core",
-                        1
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-in3",
-                        0
-                    ],
-                    "destination": [
                         "obj-mute",
                         0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-mute",
-                        0
-                    ],
-                    "destination": [
-                        "obj-core",
-                        2
                     ]
                 }
             },
@@ -431,11 +431,11 @@
             {
                 "patchline": {
                     "source": [
-                        "obj-core",
-                        1
+                        "obj-mute",
+                        0
                     ],
                     "destination": [
-                        "obj-out2",
+                        "obj-3",
                         0
                     ]
                 }
@@ -443,8 +443,44 @@
             {
                 "patchline": {
                     "source": [
+                        "obj-3",
+                        1
+                    ],
+                    "destination": [
                         "obj-core",
-                        2
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-3",
+                        0
+                    ],
+                    "destination": [
+                        "obj-4",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-4",
+                        0
+                    ],
+                    "destination": [
+                        "obj-5",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-5",
+                        0
                     ],
                     "destination": [
                         "obj-1",

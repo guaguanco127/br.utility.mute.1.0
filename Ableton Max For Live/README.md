@@ -1,11 +1,11 @@
-# Ableton Max for Live device: br.utility.mute.2.1  
+# Ableton Max for Live device: br.utility.mute.2.2  
    
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.utility.mute.2.1, with all related files, can be found here: [https://github.com/guaguanco127/br.utility.mute](https://github.com/guaguanco127/br.utility.mute)  
+Repository for br.utility.mute.2.2, with all related files, can be found here: [https://github.com/guaguanco127/br.utility.mute](https://github.com/guaguanco127/br.utility.mute)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9.
@@ -20,7 +20,7 @@ These files were created with Max 9.
 
 A click-free mute. Switching a gain straight from 1 to 0 cuts the wave mid-swing, and that jump is heard as a click. br.utility.mute moves the gain along a 10 ms S-curve instead: too fast to hear as a fade, smooth enough that nothing clicks, and it lands on true silence. Works at any sample rate.
 
-A stereo audio effect with one Mute button. Mute is a Live parameter, so you can automate it or map it to a controller. The separate "basic" device from 1.0 is gone; the commented teaching version now lives in the [Max/MSP abstractions](https://github.com/guaguanco127/br.utility.mute/tree/main/MaxMSP%20Abstraction) (br.utility.mute.stereo.ui.2.1).
+A stereo audio effect with one Mute button. Mute is a Live parameter, so you can automate it or map it to a controller. The separate "basic" device from 1.0 is gone; the commented teaching version now lives in the [Max/MSP abstractions](https://github.com/guaguanco127/br.utility.mute/tree/main/MaxMSP%20Abstraction) (br.utility.mute.stereo.ui.2.2).
 
 ## <a name="M4L"></a>What Is a Max For Live Device?
 
@@ -33,7 +33,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Mac:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects > Max Audio Effect  
-Copy br.utility.mute.2.1.amxd into that folder
+Copy br.utility.mute.2.2.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect  
   

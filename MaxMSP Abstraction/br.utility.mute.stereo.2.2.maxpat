@@ -39,7 +39,7 @@
         "enablehscroll": 1,
         "enablevscroll": 1,
         "devicewidth": 0.0,
-        "description": "br.utility.mute.stereo.2.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "description": "br.utility.mute.stereo.2.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
         "digest": "",
         "tags": "",
         "style": "",
@@ -59,7 +59,7 @@
                         360.0,
                         33.0
                     ],
-                    "text": "br.utility.mute.stereo.2.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
+                    "text": "br.utility.mute.stereo.2.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -128,7 +128,7 @@
                 "box": {
                     "maxclass": "newobj",
                     "id": "obj-gen",
-                    "text": "gen~ @title br.utility.mute.stereo.2.1",
+                    "text": "gen~ @title br.utility.mute.stereo.2.2",
                     "numinlets": 3,
                     "numoutlets": 2,
                     "outlettype": [
@@ -265,7 +265,7 @@
                                         420.0
                                     ],
                                     "parameter_enable": 0,
-                                    "code": "// br.utility.mute.stereo.2.1 -- click-free mute\n// Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/\n// MUST MATCH: the stereo core, the stereo UI, the RNBO host and the M4L device embed this same code\n// in1/in2 audio L/R, in3 mute 0/1, 1 = mute, signal or number\n// out1/out2 audio L/R\n// The fade is a raised-cosine S-curve that takes exactly 10 ms end to end:\n// it leaves and lands gently, with no corner to click, and reaches true silence,\n// which a one-pole smoother never quite does.\n// Mute values between 0 and 1 give partial gain; a moving mute signal is slew-limited to the same 10 ms.\n\n// fade position: 0 = playing, 1 = muted\nHistory pos(0);\n\ngoal = clamp(in3, 0, 1);\ninc = 1 / mstosamps(10);\np = pos;\nif (p < goal) {\n    p = min(p + inc, goal);\n}\nelse if (p > goal) {\n    p = max(p - inc, goal);\n}\n// p 0 -> gain 1, p 1 -> gain 0\ng = 0.5 + 0.5 * cos(p * pi);\nout1 = in1 * g;\nout2 = in2 * g;\npos = p;\n",
+                                    "code": "// br.utility.mute.stereo.2.2 -- click-free mute\n// Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/\n// MUST MATCH: the stereo core, the stereo UI, the RNBO host and the M4L device embed this same code\n// in1/in2 audio L/R, in3 mute 0/1, 1 = mute, signal or number\n// out1/out2 audio L/R\n// The fade is a raised-cosine S-curve that takes exactly 10 ms end to end:\n// it leaves and lands gently, with no corner to click, and reaches true silence,\n// which a one-pole smoother never quite does.\n// Mute values between 0 and 1 give partial gain; a moving mute signal is slew-limited to the same 10 ms.\n\n// fade position: 0 = playing, 1 = muted\nHistory pos(0);\n\ngoal = clamp(in3, 0, 1);\ninc = 1 / mstosamps(10);\np = pos;\nif (p < goal) {\n    p = min(p + inc, goal);\n}\nelse if (p > goal) {\n    p = max(p - inc, goal);\n}\n// p 0 -> gain 1, p 1 -> gain 0\ng = 0.5 + 0.5 * cos(p * pi);\nout1 = in1 * g;\nout2 = in2 * g;\npos = p;\n",
                                     "fontname": "Arial",
                                     "fontsize": 12.0
                                 }
@@ -385,7 +385,7 @@
                     "outlettype": [],
                     "patching_rect": [
                         15.0,
-                        140.0,
+                        170.0,
                         30.0,
                         30.0
                     ],
@@ -403,7 +403,7 @@
                     "outlettype": [],
                     "patching_rect": [
                         165.0,
-                        140.0,
+                        170.0,
                         30.0,
                         30.0
                     ],
@@ -425,67 +425,9 @@
                         520.0,
                         75.0
                     ],
-                    "text": "click-free mute: 1 = silent, 0 = playing. The gain follows a 10 ms S-curve, so it never jumps (a jump = a click) and lands on true silence. The mute inlet takes a number or a signal; values in between give partial gain. One gain for both channels, so L and R stay together. State outlet (last): every number that changes the mute goes out as mute 0 / mute 1, through [change 0] so repeats are dropped. Signals feed the gen~ only and are not reported.",
+                    "text": "click-free mute: 1 = silent, 0 = playing. The gain follows a 10 ms S-curve, so it never jumps (a jump = a click) and lands on true silence. The mute inlet takes a number or a signal; values in between give partial gain. One gain for both channels, so L and R stay together. No State outlet here: whatever drives the core already knows the value. The .ui versions report their button.",
                     "fontname": "Arial",
                     "fontsize": 12.0
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "newobj",
-                    "id": "obj-1",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [
-                        "",
-                        "",
-                        ""
-                    ],
-                    "patching_rect": [
-                        220.0,
-                        130.0,
-                        72.0,
-                        22.0
-                    ],
-                    "text": "change 0",
-                    "fontname": "Arial",
-                    "fontsize": 12.0
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "newobj",
-                    "id": "obj-2",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [
-                        ""
-                    ],
-                    "patching_rect": [
-                        220.0,
-                        160.0,
-                        100.0,
-                        22.0
-                    ],
-                    "text": "prepend mute",
-                    "fontname": "Arial",
-                    "fontsize": 12.0
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "outlet",
-                    "id": "obj-3",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "outlettype": [],
-                    "patching_rect": [
-                        220.0,
-                        200.0,
-                        30.0,
-                        30.0
-                    ],
-                    "comment": "State (Message): mute 0 / mute 1, sent the moment the mute changes. Numbers only (a signal mute is not reported). Pick it out by name: [route mute]"
                 }
             }
         ],
@@ -546,42 +488,6 @@
                     ],
                     "destination": [
                         "obj-out2",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-in3",
-                        0
-                    ],
-                    "destination": [
-                        "obj-1",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-1",
-                        0
-                    ],
-                    "destination": [
-                        "obj-2",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-2",
-                        0
-                    ],
-                    "destination": [
-                        "obj-3",
                         0
                     ]
                 }
